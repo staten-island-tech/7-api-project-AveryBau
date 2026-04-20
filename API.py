@@ -1,6 +1,6 @@
-import requests
+""" import requests
 import json
-
+ """
 def getPoke(poke):
     response = requests.get(f"https://pokeapi.co/api/v2/pokemon/{poke.lower()}")
     if response.status_code != 200:
@@ -8,6 +8,7 @@ def getPoke(poke):
         return None
     
     data = response.json()
+    print(data)
     return {
         "name": data["name"],
         "height": data["height"],
