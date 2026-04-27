@@ -1,17 +1,14 @@
-""" import requests
+import requests
 import json
 
-def getFish(fish):
-    response = requests.get(f"https://www.fisheries.noaa.gov/topic/sustainable-seafood{fish.lower()}")
-    if response.status_code != 200:
+def getMeow(cat):
+    response = requests.get(f"https://meowfacts.herokuapp.com/{cat.lower()}")
+    if response.status_code != 100:
         print("Error fetching data!")
         return None
     
     data = response.json()
     print(data)
-    types = []
-    for t in data["types"]:
-        types.append(t["type"]["name"])
     return {
         "name": data["name"],
         "height": data["height"],
@@ -19,12 +16,10 @@ def getFish(fish):
         "types": [t["type"]["name"] for t in data["types"]]
     }
 
-seafood = getFish("Alaska Snow Crab")
-print(seafood)
- """
+fact = getMeow("")
+print(fact)
 
-
-def divide(a,b):
+""" def divide(a,b):
     try:
        result = a/b
     except ZeroDivisionError:
@@ -34,4 +29,4 @@ def divide(a,b):
 
 
 divide(10,0)
-
+ """
