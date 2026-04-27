@@ -1,4 +1,4 @@
-import requests
+""" import requests
 import json
 
 def getFish(fish):
@@ -12,8 +12,6 @@ def getFish(fish):
     types = []
     for t in data["types"]:
         types.append(t["type"]["name"])
-    for key, value in seafood.items():
-        print(key, "→", value)
     return {
         "name": data["name"],
         "height": data["height"],
@@ -23,6 +21,17 @@ def getFish(fish):
 
 seafood = getFish("Alaska Snow Crab")
 print(seafood)
-for key, value in seafood.items():
-    print(f"{key.title()}: {value}")
+ """
+
+
+def divide(a,b):
+    try:
+       result = a/b
+    except ZeroDivisionError:
+       print("Cannot divide by 0")
+    else:
+        print(a/b)
+
+
+divide(10,0)
 
