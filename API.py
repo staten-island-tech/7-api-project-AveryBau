@@ -1,40 +1,49 @@
 import requests
 import json
 
-""" def getMeow(cat):
-    response = requests.get(f"https://meowfacts.herokuapp.com/")
+""" def getrandomMeow(cat):
+    response = requests.get(f"https://meowfacts.herokuapp.com/{cat.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
     data = response.json()
     print(data)
 
-fact = getMeow("")
-print(fact)
- """
+fact = getrandomMeow("")
+print(fact) """
 
 
-def getMeow3(cat):
-    response = requests.get(f"https://meowfacts.herokuapp.com/?count=3")
+""" def getmultipleMeow(cat):
+    response = requests.get(f"https://meowfacts.herokuapp.com/?count={cat.lower()}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
     data = response.json()
     print(data)
 
-fact = getMeow3("")
-print(fact)
+fact = getmultipleMeow("3")
+print(fact) """
 
 
+""" def getspecificMeow(cat):
+    response = requests.get(f"https://meowfacts.herokuapp.com/?id={cat.lower()}")
+    if response.status_code != 200:
+        print("Error fetching data!")
+        return None
+    data = response.json()
+    print(data)
 
-""" def divide(a,b):
-    try:
-       result = a/b
-    except ZeroDivisionError:
-       print("Cannot divide by 0")
-    else:
-        print(a/b)
+fact = getspecificMeow("1")
+print(fact) """
 
 
-divide(10,0)
- """
+""" def getlanguageMeow(cat):
+    response = requests.get(f"https://meowfacts.herokuapp.com/?lang={cat.lower()}")
+    if response.status_code != 200:
+        print("Error fetching data!")
+        return None
+    data = response.json()
+    print(data)
+
+fact = getlanguageMeow("ukr")
+print(fact) """
