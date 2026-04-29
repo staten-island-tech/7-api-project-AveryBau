@@ -14,7 +14,7 @@ print(fact)
  """
 
 
-def getMeow(cat):
+def getMeow3(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/?count=3")
     if response.status_code != 200:
         print("Error fetching data!")
@@ -22,9 +22,8 @@ def getMeow(cat):
     data = response.json()
     print(data)
 
-fact = getMeow("")
+fact = getMeow3("")
 print(fact)
-
 
 
 
