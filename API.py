@@ -10,7 +10,7 @@ import json
     print(data)
 
 fact = getrandomMeow("")
-print(fact) """
+"""
 
 
 """ def getmultipleMeow(cat):
@@ -21,10 +21,11 @@ print(fact) """
     data = response.json()
     print(data)
 
-fact = getmultipleMeow("3")
-print(fact) """
+fact = getmultipleMeow("3")"""
 
 print("HELLO!!! DO YOU WANT TO KNOW FACTZ ABOUT CATZ???")
+Userinput = True
+
 def getspecificMeow(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/?id={cat.lower()}")
     if response.status_code != 200:
@@ -32,9 +33,10 @@ def getspecificMeow(cat):
         return None
     data = response.json()
     print(data)
-ask = int(input("What fact do ya wanna learn today? Pick a random number."))
-fact = getspecificMeow("1")
-print(fact)
+getspecificMeow("")
+
+while Userinput == True:
+    ask = int(input("What fact do ya wanna learn today? Pick a random number."))
 
 
 
@@ -47,5 +49,4 @@ print(fact)
     data = response.json()
     print(data)
 
-fact = getlanguageMeow("ukr")
-print(fact) """
+fact = getlanguageMeow("ukr")"""
