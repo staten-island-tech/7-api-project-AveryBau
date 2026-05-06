@@ -27,14 +27,22 @@ fact = getrandomMeow("")
 fact = getmultipleMeow("3")"""
 
 
+print("Hello! Do you wanna learn factz about catz?")
+Userinput = input("What do you want to learn? Type any number.")
+print(f"You chose fact number {Userinput}")
+Userinput2 = True
+
 def getspecificMeow(cat):
-    response = requests.get(f"https://meowfacts.herokuapp.com/?id={cat.lower()}")
+    response = requests.get(f"https://meowfacts.herokuapp.com/?id={Userinput}")
     if response.status_code != 200:
         print("Error fetching data!")
         return None
     data = response.json()
+    if "0" in Userinput:
+        print("You must pick a number greater than 0")
+        return
     print(data)
-getspecificMeow()
+getspecificMeow(Userinput)
 
 
 """ def checking():
