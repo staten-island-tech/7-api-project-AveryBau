@@ -1,9 +1,9 @@
 import requests
 import json
-""" import random
+import random
 import tkinter
 from tkinter import *
- """
+
 """ def getrandomMeow(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/{cat.lower()}")
     if response.status_code != 200:
@@ -33,8 +33,9 @@ def getspecificMeow(cat):
         print("Error fetching data!")
         return None
     data = response.json()
-    if getspecificMeow("1"):
-        print(data)
+    print(data)
+getspecificMeow()
+
 
 """ def checking():
     if answers:
@@ -43,7 +44,7 @@ def getspecificMeow(cat):
             Checked.config(text="Good job")
             answers.remove(guess)
         else: 
-            Checked.config(text="NOo")
+            Checked.config(text="Noo")
     else: 
         Checked.config(text="Congrats")
         newMeow()
@@ -56,7 +57,7 @@ def newMeow():
     for i in range(len(x)):
         answers.append(x[i][""])
 
-    instruct.config(text = f"Can you learn cool, new facts about cats?")
+    instruct.config(text = f"Do you wanna learn facts abouts cats?")
 
 Window = Tk()
 Window.geometry("500x500")
