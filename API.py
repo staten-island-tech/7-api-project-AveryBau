@@ -40,8 +40,9 @@ def getspecificMeow(cat):
     data = response.json()
     if "0" in Userinput:
         print("You must pick a number greater than 0")
-        return
-    print(data)
+    else:
+        print(data)
+
 getspecificMeow(Userinput)
 
 
