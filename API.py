@@ -1,8 +1,9 @@
 import requests
 import json
-""" import random
+import random
 import tkinter
-from tkinter import * """
+from tkinter import *
+import tkinter as tk 
 
 """ def getrandomMeow(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/{cat.lower()}")
@@ -27,10 +28,13 @@ fact = getrandomMeow("")
 fact = getmultipleMeow("3")"""
 
 
+
+
+
 print("Hello! Do you wanna learn factz about catz?")
 Userinput = input("What do you want to learn? Type any number.")
 print(f"You chose fact number {Userinput}")
-Userinput2 = True
+
 
 def getspecificMeow(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/?id={Userinput}")
@@ -38,53 +42,46 @@ def getspecificMeow(cat):
         print("Error fetching data!")
         return None
     data = response.json()
-    if "0" in Userinput:
-        print("You must pick a number greater than 0")
-    else:
-        print(data)
-
+    print(data)
 getspecificMeow(Userinput)
 
+window = tk.Tk()
+window.geometry("500x500")
+window.title("Meow Facts")
+window.resizable(True, True)
 
-""" def checking():
-    if answers:
-        guess = Enter.get()
-        if guess in answers:
-            Checked.config(text="Good job")
-            answers.remove(guess)
-        else: 
-            Checked.config(text="Noo")
-    else: 
-        Checked.config(text="Congrats")
-        newMeow()
-    
-def newMeow():
-    New = random.choice()
-    x = getspecificMeow(New)
-    global answers
-    answers = []
-    for i in range(len(x)):
-        answers.append(x[i][""])
 
-    instruct.config(text = f"Do you wanna learn facts abouts cats?")
+prompt = tk.Label(window, text="Hello! Do you wanna learn factz about catz? Type any number below:", font=("Arial", 14))
+prompt.pack(pady=10) 
 
-Window = Tk()
-Window.geometry("500x500")
+entry = tk.Entry(window, font=("Arial", 14), width = 30)
+entry.pack(pady=5)
 
-Title = Label(master=Window, text = "Meow Facts")
+result_label = tk.Label(window, text="", font=("Arial", 14, "bold"), fg="blue")
+result_label.pack(pady=15)
+
+def meow_fact():
+    text = entry.get()
+    meow_text = text[::1]
+    result_label.config(text = f"{meow_text}")
+
+button = tk.Button(window, text="Enter", font=("Arial", 14), command=meow_fact) 
+button.pack(pady=10)
+
+window.mainloop()
+
+""" Title = Label(master = Window, text = "Meow Facts")
 Title.pack()
-Enter = Entry(master=Window)
+Enter = Entry(master = Window)
 Enter.pack
 
-instruct = Label(master=Window, text = "")
+instruct = Label(master = Window, text = "What do you want to learn? Type any number.")
 instruct.pack
 
-Checked = Label(master=Window, text="check")
-Checked.pack
+Checked = Label(master = Window, text = "check")
+Checked.pack 
 
-Button1 = Button(master=Window, command= checking, text = "Guess")
+Button1 = Button(master = Window, command = facts, text = "Type any number.")
 Button1.pack
 
-newMeow()
-
-Window.mainloop() """
+newMeow() """
