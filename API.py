@@ -68,6 +68,7 @@ def meow_fact():
 button = tk.Button(window, text="Enter", font=("Arial", 14), command=meow_fact) 
 button.pack(pady=10)
 
+meow_fact()
 window.mainloop()
 
 """ Title = Label(master = Window, text = "Meow Facts")
