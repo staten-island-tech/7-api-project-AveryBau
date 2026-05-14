@@ -43,16 +43,21 @@ def getspecificMeow(cat):
         return None
     data = response.json()
     print(data)
-getspecificMeow(Userinput)
 
+def meow_fact():
+    text = entry.get()
+    meow_text = text(f"{Userinput}")
+    result_label.config(text = f"{meow_text}")
+meow_fact
+    
 window = tk.Tk()
-window.geometry("500x500")
+window.geometry("700x700")
 window.title("Meow Facts")
 window.resizable(True, True)
 
 
 prompt = tk.Label(window, text="Hello! Do you wanna learn factz about catz? Type any number below:", font=("Arial", 14))
-prompt.pack(pady=10) 
+prompt.pack(pady=10)
 
 entry = tk.Entry(window, font=("Arial", 14), width = 30)
 entry.pack(pady=5)
@@ -60,15 +65,9 @@ entry.pack(pady=5)
 result_label = tk.Label(window, text="", font=("Arial", 14, "bold"), fg="blue")
 result_label.pack(pady=15)
 
-def meow_fact():
-    text = entry.get()
-    meow_text = text[::1]
-    result_label.config(text = f"{meow_text}")
-
 button = tk.Button(window, text="Enter", font=("Arial", 14), command=meow_fact) 
 button.pack(pady=10)
 
-meow_fact()
 window.mainloop()
 
 """ Title = Label(master = Window, text = "Meow Facts")
