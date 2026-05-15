@@ -31,11 +31,16 @@ fact = getmultipleMeow("3")"""
 
 
 
+
 print("Hello! Do you wanna learn factz about catz?")
 Userinput = input("What do you want to learn? Type any number.")
 print(f"You chose fact number {Userinput}")
 
-
+def meow_fact():
+    text = entry.get()
+    result_label.config(text)
+    return
+    
 def getspecificMeow(cat):
     response = requests.get(f"https://meowfacts.herokuapp.com/?id={Userinput}")
     if response.status_code != 200:
@@ -43,12 +48,7 @@ def getspecificMeow(cat):
         return None
     data = response.json()
     print(data)
-
-def meow_fact():
-    text = entry.get()
-    meow_text = text(f"{Userinput}")
-    result_label.config(text = f"{meow_text}")
-meow_fact
+getspecificMeow(Userinput)
     
 window = tk.Tk()
 window.geometry("700x700")
