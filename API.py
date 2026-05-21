@@ -9,7 +9,7 @@ def getMeow():
         ResponseFact.config(text = "Error fetching data!")
     else:
         data = get.json()
-        ResponseFact.config(text=f"Fact:{data["data"]}", bg = "pink", fg="black")
+        ResponseFact.config(text=f"Fact:{data["data"]}", bg = "lightblue", fg="black")
 
     
 window = tk.Tk()
@@ -18,7 +18,7 @@ window.title("Meow Facts")
 window.resizable(True, True)
 
 
-prompt = tk.Label(window, text="Hello! Do you wana learn factz about catz? Type any number below", font=("Arial", 20))
+prompt = tk.Label(window, text="Hello! Do you wanna learn factz about catz? Type a number 0-91", font=("Arial", 20))
 prompt.pack(pady=20, padx=10)
 
 Enter = tk.Entry(window, font=("Arial", 20))
